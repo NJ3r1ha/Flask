@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about_me">About me</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+        </ul>
+        <p>Uporabnik:</p>
+        {% if user %}
+            {{ user }}
+        {% else %}
+            Anonymous
+        {% endif %}
+    </div>
+    {% block content %} {% endblock %}
+    <img src="/static/images/smartninja-logo.png">
+</body>
+</html>
